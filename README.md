@@ -1,31 +1,34 @@
 # my_portfolio
 これは私のポートフォリオです
 
-# ゲームシステム分析ポートフォリオ
+## 『ポケットモンスター』シリーズのゲームループ分析
 
-## 1. 〇〇（ゲーム名）のコアサイクル分析
-このゲームの「やめ時を失う仕組み」をエンジニア視点で分析しました。
+ポケモンの面白さは、「育成」と「収集」の2つのループが、「対戦（試行）」を軸に密接に絡み合っている点にあります。
 
-### コアサイクル図
+### ゲームループ全体図
 ```mermaid
----
-config:
-  layout: fixed
----
-flowchart TB
-    A["Christmas"] -- Get money --> B("Go shopping")
-    B --> C{"Let me think"}
-    C -- One --> D["Laptop"]
-    C -- Two --> E["iPhone"]
-    C -- Three --> F["fa:fa-car Car"]
-    A --> n1["Untitled Node"]
-    n1 --> n2["Untitled Node"]
-    n5["Database"] --> n6["Untitled Node"]
-    n3["Rectangle"]
-    n4["Rounded"]
-    n7["Untitled Node"]
+graph TD
+    %% メインループ（育成と冒険）
+    Start((冒険の開始)) --> Battle[野生・トレーナーとの戦闘]
+    Battle --> Reward[経験値・賞金の獲得]
+    Reward --> Growth[ポケモンのレベルアップ・進化]
+    Growth --> Challenge{より強い相手への挑戦}
+    Challenge -->|ジムリーダー・四天王| Battle
+    
+    %% サブループ（収集と編成）
+    Battle --> Catch[ポケモンの捕獲]
+    Catch --> Collection[図鑑完成・パーティ編成の多様化]
+    Collection --> Strategy[タイプ相性を考えた戦略構築]
+    Strategy --> Challenge
 
-    n5@{ shape: db}
-    n3@{ shape: rect}
-    n4@{ shape: rounded}
-    n7@{ shape: rect}
+    subgraph 育成ループ
+    Battle
+    Reward
+    Growth
+    end
+
+    subgraph 収集ループ
+    Catch
+    Collection
+    Strategy
+    end
