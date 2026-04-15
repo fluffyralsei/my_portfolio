@@ -36,3 +36,5 @@ graph TD
     Collection
     Strategy
     end
+```
+<img width="1920" height="1080" alt="883710_38" src="https://github.com/user-attachments/assets/53edac74-aa73-4f3c-bda1-2305f1224137" />
