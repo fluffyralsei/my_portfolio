@@ -22,7 +22,6 @@
 ---
 config:
   theme: neutral
-  look: handDrawn
 ---
 flowchart TD
     %% ノードの定義
