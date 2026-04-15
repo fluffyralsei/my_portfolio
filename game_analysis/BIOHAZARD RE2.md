@@ -34,7 +34,7 @@ flowchart TD
     A -->|"発見"| B
     B -->|"意思決定"| C
     C -->|"実行・解決"| D
-    D -->|"次なる冒険へ"| A
+    D -->|"次のステージへ"| A
 
     %% スタイルの調整
     style A fill:#f9f,stroke:#333,stroke-width:2px
