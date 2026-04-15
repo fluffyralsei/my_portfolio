@@ -18,3 +18,27 @@
 
 ##分析
 ### 1.ゲームループ
+```mermaid
+---
+config:
+  theme: neutral
+  look: handDrawn
+---
+flowchart TD
+    %% ノードの定義
+    A["探索フェーズ<br/>扉の確認・未知のエリア探索"]
+    B["アクティブフェーズ<br/>敵・障害・謎解きとの遭遇"]
+    C["判断フェーズ<br/>戦闘・逃走・アイテム使用"]
+    D["収穫フェーズ<br/>報酬獲得・新エリアの解禁"]
+
+    %% 流れの定義
+    A -->|"発見"| B
+    B -->|"意思決定"| C
+    C -->|"実行・解決"| D
+    D -->|"次なる冒険へ"| A
+
+    %% スタイルの調整
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#fb1,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
